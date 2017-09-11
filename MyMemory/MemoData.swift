@@ -11,7 +11,7 @@ import UIKit
 class MemoData {
     var memoIndex : Int? // 데이터 식별값
     var title : String? // 메모 제목
-    var description : String?
+    var contents : String?
     var image : UIImage?
     var regDate : Date?
 }

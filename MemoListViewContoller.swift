@@ -1,51 +1,46 @@
 //
-//  MemoListViewControllerTableViewController.swift
+//  MemoListViewContoller.swift
 //  MyMemory
 //
-//  Created by Yeojong on 2017. 9. 10..
+//  Created by Yeojong on 2017. 9. 11..
 //  Copyright © 2017년 Yeojong. All rights reserved.
 //
 
 import UIKit
 
-class MemoListViewControllerTableViewController: UITableViewController {
+class MemoListViewContoller: UITableViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    override func viewWillAppear(_ animated: Bool) {
+        self.tableView.reloadData()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        let count = self.appDelegate.memoList.count
+        return count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        // Data를 가져옴
+        let row = self.appDelegate.memoList[indexPath.row]
+        
+        let cellId = row.image == nil ? "memoCell" : "memoCellWithImage"
+        let cell: MemoCell = tableView.dequeueReusableCell(withIdentifier: cellId) as! MemoCell
+        
+        cell.img?.image = row.image
+        cell.subject?.text = row.title
+        cell.contents?.text = row.contents
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        cell.regDate?.text = formatter.string(from: row.regDate!)
+        
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
