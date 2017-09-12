@@ -10,12 +10,22 @@ import UIKit
 
 class MemoDetailViewController: UIViewController {
 
+    @IBOutlet var subject: UILabel!
+    @IBOutlet var contents: UILabel!
+    @IBOutlet var img: UIImageView!
+    
+    var memo: MemoData?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        subject.text = memo?.title
+        contents.text = memo?.contents
+        img.image = memo?.image
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
