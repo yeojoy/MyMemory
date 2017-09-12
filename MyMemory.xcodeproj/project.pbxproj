@@ -14,8 +14,7 @@
 		F490397B1F657B1A003C8EDF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F49039791F657B1A003C8EDF /* LaunchScreen.storyboard */; };
 		F49039861F657B1A003C8EDF /* MyMemoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49039851F657B1A003C8EDF /* MyMemoryTests.swift */; };
 		F49039911F657B1A003C8EDF /* MyMemoryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49039901F657B1A003C8EDF /* MyMemoryUITests.swift */; };
-		F490399F1F6586D8003C8EDF /* MemoListViewControllerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F490399E1F6586D8003C8EDF /* MemoListViewControllerTableViewController.swift */; };
-		F4A55F3D1F658E8300F90FF9 /* MemoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A55F3C1F658E8300F90FF9 /* MemoListViewController.swift */; };
+		F49BF3DD1F66CB9600779E2C /* MemoListViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49BF3DC1F66CB9600779E2C /* MemoListViewContoller.swift */; };
 		F4A55F3F1F658E9600F90FF9 /* MemoFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A55F3E1F658E9600F90FF9 /* MemoFormViewController.swift */; };
 		F4A55F411F658EA000F90FF9 /* MemoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A55F401F658EA000F90FF9 /* MemoDetailViewController.swift */; };
 		F4A55F431F658ECE00F90FF9 /* MemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A55F421F658ECE00F90FF9 /* MemoCell.swift */; };
@@ -53,8 +52,7 @@
 		F490398C1F657B1A003C8EDF /* MyMemoryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyMemoryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F49039901F657B1A003C8EDF /* MyMemoryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMemoryUITests.swift; sourceTree = "<group>"; };
 		F49039921F657B1A003C8EDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F490399E1F6586D8003C8EDF /* MemoListViewControllerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoListViewControllerTableViewController.swift; sourceTree = "<group>"; };
-		F4A55F3C1F658E8300F90FF9 /* MemoListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoListViewController.swift; sourceTree = "<group>"; };
+		F49BF3DC1F66CB9600779E2C /* MemoListViewContoller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MemoListViewContoller.swift; path = ../MemoListViewContoller.swift; sourceTree = "<group>"; };
 		F4A55F3E1F658E9600F90FF9 /* MemoFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoFormViewController.swift; sourceTree = "<group>"; };
 		F4A55F401F658EA000F90FF9 /* MemoDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoDetailViewController.swift; sourceTree = "<group>"; };
 		F4A55F421F658ECE00F90FF9 /* MemoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoCell.swift; sourceTree = "<group>"; };
@@ -109,15 +107,14 @@
 		F490396F1F657B1A003C8EDF /* MyMemory */ = {
 			isa = PBXGroup;
 			children = (
+				F49BF3DC1F66CB9600779E2C /* MemoListViewContoller.swift */,
 				F49039701F657B1A003C8EDF /* AppDelegate.swift */,
 				F49039721F657B1A003C8EDF /* ViewController.swift */,
 				F49039741F657B1A003C8EDF /* Main.storyboard */,
 				F49039771F657B1A003C8EDF /* Assets.xcassets */,
 				F49039791F657B1A003C8EDF /* LaunchScreen.storyboard */,
 				F490397C1F657B1A003C8EDF /* Info.plist */,
-				F490399E1F6586D8003C8EDF /* MemoListViewControllerTableViewController.swift */,
 				F4A55F441F658F1E00F90FF9 /* MemoData.swift */,
-				F4A55F3C1F658E8300F90FF9 /* MemoListViewController.swift */,
 				F4A55F3E1F658E9600F90FF9 /* MemoFormViewController.swift */,
 				F4A55F401F658EA000F90FF9 /* MemoDetailViewController.swift */,
 				F4A55F421F658ECE00F90FF9 /* MemoCell.swift */,
@@ -280,14 +277,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F49BF3DD1F66CB9600779E2C /* MemoListViewContoller.swift in Sources */,
 				F4A55F431F658ECE00F90FF9 /* MemoCell.swift in Sources */,
 				F4A55F451F658F1E00F90FF9 /* MemoData.swift in Sources */,
 				F4A55F3F1F658E9600F90FF9 /* MemoFormViewController.swift in Sources */,
 				F4A55F411F658EA000F90FF9 /* MemoDetailViewController.swift in Sources */,
-				F4A55F3D1F658E8300F90FF9 /* MemoListViewController.swift in Sources */,
 				F49039731F657B1A003C8EDF /* ViewController.swift in Sources */,
 				F49039711F657B1A003C8EDF /* AppDelegate.swift in Sources */,
-				F490399F1F6586D8003C8EDF /* MemoListViewControllerTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

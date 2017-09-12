@@ -8,22 +8,23 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--목록-->
         <scene sceneID="OjV-RZ-gFd">
             <objects>
-                <tableViewController id="xXy-Dd-l9A" sceneMemberID="viewController">
+                <tableViewController id="xXy-Dd-l9A" customClass="MemoListViewContoller" customModule="MyMemory" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="EGB-UC-YGo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="memoCell" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="80" id="vD9-1I-PU2">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="memoCell" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="80" id="vD9-1I-PU2" customClass="MemoCell" customModule="MyMemory" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vD9-1I-PU2" id="wyk-tM-uWo" customClass="MemoCell" customModule="MyMemory" customModuleProvider="target">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vD9-1I-PU2" id="wyk-tM-uWo">
                                     <rect key="frame" x="0.0" y="0.0" width="342" height="79.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
@@ -66,11 +67,16 @@
                                         <constraint firstItem="8T2-8C-feK" firstAttribute="top" secondItem="WMM-DR-qnl" secondAttribute="bottom" constant="4" id="ywy-ld-bpQ"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="contents" destination="8T2-8C-feK" id="Mov-MC-37P"/>
+                                    <outlet property="regDate" destination="K4B-uu-5E4" id="Oz3-UA-OJX"/>
+                                    <outlet property="subject" destination="WMM-DR-qnl" id="3bk-8r-XHq"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="memoCellWithImage" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="80" id="yJO-5F-5UJ" customClass="MemoCell" customModule="MyMemory" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="108" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yJO-5F-5UJ" id="9ar-bm-Fx5">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yJO-5F-5UJ" id="9ar-bm-Fx5" customClass="MemoCell" customModule="MyMemory" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="342" height="79.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
@@ -119,6 +125,12 @@
                                         <constraint firstItem="CBa-v9-FA8" firstAttribute="leading" secondItem="MnN-Pt-Wou" secondAttribute="trailing" constant="8" id="uSb-cY-Uyh"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="contents" destination="CBa-v9-FA8" id="LP3-pB-j1p"/>
+                                    <outlet property="img" destination="MnN-Pt-Wou" id="Cxf-TQ-8bQ"/>
+                                    <outlet property="regDate" destination="2dq-F5-gfh" id="xSN-or-nfh"/>
+                                    <outlet property="subject" destination="PcV-8T-ya0" id="NxL-a1-V1X"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -144,7 +156,7 @@
         <!--메모 작성-->
         <scene sceneID="u2L-iW-hHn">
             <objects>
-                <viewController id="NZA-8r-lCw" sceneMemberID="viewController">
+                <viewController id="NZA-8r-lCw" customClass="MemoFormViewController" customModule="MyMemory" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eGy-15-mC6"/>
                         <viewControllerLayoutGuide type="bottom" id="Y6d-1f-CjO"/>
@@ -153,14 +165,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="TPV-bg-wbW">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TPV-bg-wbW">
                                 <rect key="frame" x="0.0" y="72" width="375" height="325"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VbO-SZ-rIV">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VbO-SZ-rIV">
                                 <rect key="frame" x="62" y="409" width="250" height="250"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="1sG-T7-AM6"/>
@@ -180,7 +191,23 @@
                     </view>
                     <navigationItem key="navigationItem" title="메모 작성" id="bBd-TN-2h8">
                         <barButtonItem key="backBarButtonItem" title="목록" id="tyP-G5-XZi"/>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="camera" id="a1z-SA-O16">
+                                <connections>
+                                    <action selector="pick:" destination="NZA-8r-lCw" id="s84-F5-yC8"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="저장" id="Hpm-rn-fk1" userLabel="save">
+                                <connections>
+                                    <action selector="save:" destination="NZA-8r-lCw" id="JI6-0C-glK"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
+                    <connections>
+                        <outlet property="contents" destination="TPV-bg-wbW" id="7xL-9g-BNG"/>
+                        <outlet property="preview" destination="VbO-SZ-rIV" id="9sX-ty-EaU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dQd-2x-787" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -242,10 +269,10 @@
             </objects>
             <point key="canvasLocation" x="1232.8" y="671.51424287856082"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Memo Table View-->
         <scene sceneID="PNo-r4-sGs">
             <objects>
-                <navigationController id="dLn-lh-nEI" sceneMemberID="viewController">
+                <navigationController id="dLn-lh-nEI" customClass="MemoTableView" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="XcL-9Q-o1F">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
