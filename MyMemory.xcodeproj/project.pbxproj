@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F44EA0EB1F67A60F00C7D637 /* MemoCellWithImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44EA0EA1F67A60F00C7D637 /* MemoCellWithImage.swift */; };
 		F49039711F657B1A003C8EDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49039701F657B1A003C8EDF /* AppDelegate.swift */; };
 		F49039731F657B1A003C8EDF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49039721F657B1A003C8EDF /* ViewController.swift */; };
 		F49039761F657B1A003C8EDF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F49039741F657B1A003C8EDF /* Main.storyboard */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F44EA0EA1F67A60F00C7D637 /* MemoCellWithImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoCellWithImage.swift; sourceTree = "<group>"; };
 		F490396D1F657B1A003C8EDF /* MyMemory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyMemory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F49039701F657B1A003C8EDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F49039721F657B1A003C8EDF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				F4A55F3E1F658E9600F90FF9 /* MemoFormViewController.swift */,
 				F4A55F401F658EA000F90FF9 /* MemoDetailViewController.swift */,
 				F4A55F421F658ECE00F90FF9 /* MemoCell.swift */,
+				F44EA0EA1F67A60F00C7D637 /* MemoCellWithImage.swift */,
 			);
 			path = MyMemory;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 				F4A55F411F658EA000F90FF9 /* MemoDetailViewController.swift in Sources */,
 				F49039731F657B1A003C8EDF /* ViewController.swift in Sources */,
 				F49039711F657B1A003C8EDF /* AppDelegate.swift in Sources */,
+				F44EA0EB1F67A60F00C7D637 /* MemoCellWithImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
