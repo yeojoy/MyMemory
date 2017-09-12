@@ -27,11 +27,25 @@ class MemoListViewContoller: UITableViewController {
         // Data를 가져옴
         let row = self.appDelegate.memoList[indexPath.row]
         
-        let cellId = row.image == nil ? "memoCell" : "memoCellWithImage"
-        let cell: MemoCell = tableView.dequeueReusableCell(withIdentifier: cellId) as! MemoCell
+        if row.image == nil {
+
+            let cell = tableView.dequeueReusableCell(withIdentifier: "memoCell") as! MemoCell
+            
+            cell.subject?.text = row.title
+            cell.contents?.text = row.contents
+            
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            cell.regDate?.text = formatter.string(from: row.regDate!)
+            
+            return cell
+
+        }
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "memoCellWithImage") as! MemoCellWithImage
         
         cell.img?.image = row.image
-        cell.subject?.text = row.title
+        cell.title?.text = row.title
         cell.contents?.text = row.contents
         
         let formatter = DateFormatter()
@@ -39,9 +53,26 @@ class MemoListViewContoller: UITableViewController {
         cell.regDate?.text = formatter.string(from: row.regDate!)
         
         return cell
+        
     }
     
-
+    // 각 Row의 Height을 정해서 return할 수 있음.
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80.0
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "read_sg" {
+            let index = self.tableView.indexPathForSelectedRow!.row
+            
+            (segue.destination as! MemoDetailViewController).memo = self.appDelegate.memoList[index]
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "read_sg", sender: self)
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
