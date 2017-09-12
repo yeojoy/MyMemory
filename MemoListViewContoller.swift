@@ -63,14 +63,23 @@ class MemoListViewContoller: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "read_sg" {
-            let index = self.tableView.indexPathForSelectedRow!.row
+//            let index = self.tableView.indexPathForSelectedRow!.row
             
-            (segue.destination as! MemoDetailViewController).memo = self.appDelegate.memoList[index]
+            // (segue.destination as! MemoDetailViewController).memo = self.appDelegate.memoList[index]
         }
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "read_sg", sender: self)
+        // self.performSegue(withIdentifier: "read_sg", sender: self)
+        let row = self.appDelegate.memoList[indexPath.row]
+        
+        // MemoRead는 MemoDetailViewController의 StoryBoard ID
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "MemoRead") as? MemoDetailViewController else {
+            return
+        }
+        
+        vc.param = row
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     /*

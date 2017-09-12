@@ -14,16 +14,24 @@ class MemoDetailViewController: UIViewController {
     @IBOutlet var contents: UILabel!
     @IBOutlet var img: UIImageView!
     
-    var memo: MemoData?
+    var param : MemoData?
+    // var memo: MemoData?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.subject.text = param?.title
+        self.contents.text = param?.contents
+        self.img.image = param?.image
         
-        subject.text = memo?.title
-        contents.text = memo?.contents
-        img.image = memo?.image
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd일 HH:mm분에 작성됨"
+        let detailViewTitle = formatter.string(from: (param?.regDate)!)
+        
+        self.navigationItem.title = detailViewTitle
+//        subject.text = memo?.title
+//        contents.text = memo?.contents
+//        img.image = memo?.image
     }
     
     override func didReceiveMemoryWarning() {

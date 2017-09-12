@@ -25,7 +25,7 @@
                                 <rect key="frame" x="0.0" y="28" width="414" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vD9-1I-PU2" id="wyk-tM-uWo">
-                                    <rect key="frame" x="0.0" y="0.0" width="381" height="80"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="381" height="79.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="글의 제목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WMM-DR-qnl" userLabel="title">
@@ -80,7 +80,7 @@
                                 <rect key="frame" x="0.0" y="108" width="414" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ux2-b4-qVY" id="Xrc-FI-4Ff">
-                                    <rect key="frame" x="0.0" y="0.0" width="381" height="80"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="381" height="79.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ozz-SX-ayc">
@@ -220,7 +220,7 @@
         <!--상세화면-->
         <scene sceneID="qaa-Mn-acM">
             <objects>
-                <viewController title="상세화면" id="eZs-5u-GXF" customClass="MemoDetailViewController" customModule="MyMemory" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MemoRead" title="상세화면" id="eZs-5u-GXF" customClass="MemoDetailViewController" customModule="MyMemory" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oCw-5O-Eof"/>
                         <viewControllerLayoutGuide type="bottom" id="3ij-0i-9Dq"/>
