@@ -15,5 +15,6 @@ class MemoCellWithImage: UITableViewCell {
     
     @IBOutlet var contents: UILabel!
     @IBOutlet var regDate: UILabel!
+
     
 }
